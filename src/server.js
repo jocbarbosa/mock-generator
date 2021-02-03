@@ -2,12 +2,10 @@ require('dotenv/config');
 
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
-const fs = require('fs');
+const logger = require('./middleware/logger');
 
-app.use(morgan('common', {
-    stream: fs.createWriteStream('./logs/track.log', { flags: 'a' })
-}));
+app.use(logger.logger);
+app.use(logger.loggerDev);
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
