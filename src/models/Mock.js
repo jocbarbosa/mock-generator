@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 
 const MockSchema = new Schema({
-    header: String,
-    body: String,
+    returnHeaders: Object,
+    returnBody: Object,
     returnStatus: {
         type: Number,
         required: true
