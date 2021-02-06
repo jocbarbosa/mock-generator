@@ -20,6 +20,6 @@ app.use('*', (req, res) => {
     res.status(404).send({ message: 'Resource not found' });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.APP_PORT, () => {
     console.log(`May the force be with you on port ${process.env.APP_PORT}`);
 });
